@@ -19,8 +19,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
-        <a href="https://github.com/alexellis/growlab"><span class="navbar-brand mb-0 h1 upper">{{'#'}}growlab</span></a>
-        <img src="https://raw.githubusercontent.com/alexellis/growlab.dev/master/src/images/logo-notext.svg" class="navbar-brand mb-1" width="60px">
+        <a href="#"><span class="navbar-brand mb-0 h1 upper">{{'#'}}growlab</span></a>
       </div>
     </nav>
     <div class="d-grid gap-3">
@@ -29,11 +28,9 @@
     <div class="container">
         <div class="card">
             <h5 class="card-header">
-                <quote>Welcome to your live monitoring</quote>
+                <quote>Live monitoring</quote>
             </h5>
             <div class="card-body">
-                <h5 class="card-title"><a href="https://growlab.dev">growlab</a> is a community project to monitor nature with technology</h5>
-                <p class="card-text">Generated with the <a href="https://github.com/alexellis/growlab/tree/master/app">growlab app</a></p>
 
                 <h5>Latest readings</h5>
 		        <div class="col-sm-6 col-lg-6 col-md-6 col-xl-6">
@@ -50,7 +47,11 @@
                                 <td>{{ time }}</td>
                             </tr>
                             <tr>
-                                <td>Temperature</td>
+                                <td>CPU Temp</td>
+                                <td>{{ cpu }}</td>
+                            </tr>
+                            <tr>
+                                <td>Ambient Temperature</td>
                                 <td>{{ temperature }}</td>
                             </tr>
                             <tr>
@@ -74,7 +75,6 @@
     </div>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://www.openfaas.com/">Growlab is sponsored by OpenFaaS Ltd</a>
         </div>
     </nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

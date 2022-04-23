@@ -39,11 +39,13 @@ class specimen:
         degree_symbol=u"\u00b0"
         msg = "#growlab - {}\n".format(readings["time"])
         if "temperature" in readings:
-            msg = msg + " Temperature: {:05.2f}{}C \n".format(readings["temperature"],degree_symbol)
+            msg = msg + " Ambient Temperature: {:05.2f}{}C \n".format(readings["temperature"],degree_symbol)
         if "pressure" in readings:
             msg = msg + " Pressure: {:05.2f}hPa \n".format(readings["pressure"])
         if "humidity" in readings:
             msg = msg + " Humidity: {:05.2f}% \n".format(readings["humidity"])
+        if "cpu" in readings:
+            msg = msg + " CPU Temperature: {:05.2f}{}C \n".format(readings["cpu"],degree_symbol)
 
         return msg.rstrip() + " "
 
@@ -66,6 +68,11 @@ class specimen:
             vals["temperature"] = "{:05.2f}{}C".format(readings["temperature"], degree_symbol)
         else:
             vals["temperature"] = "N/A"
+        
+        if "cpu" in readings:
+            vals["cpu"] = "{:05.2f}{}C".format(readings["cpu"], degree_symbol)
+        else:
+            vals["cpu"] = "N/A"
 
         if "humidity" in readings:
             vals["humidity"] = "{:05.2f}%".format(readings["humidity"])
