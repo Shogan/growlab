@@ -1,0 +1,21 @@
+[Unit]
+Description=GrowlabSender
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+Restart=always
+
+# Every 600 seconds (or 10 minutes)
+# RestartSec=600
+
+StartLimitInterval=0
+
+# Sensor type: "none", "bme280" or "bmp280"
+WorkingDirectory=/home/pi/growlab/data-logger/sender
+ExecStart=/home/pi/growlab/data-logger/sender/run.sh
+
+[Install]
+WantedBy=multi-user.target
