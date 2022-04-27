@@ -5,6 +5,7 @@ from datetime import datetime
 from influxdb import InfluxDBClient
 from sensors import growbme280, growbmp280
 
+function_url = os.getenv("FUNCTION_URL", "none")  # change this on each Pi
 sensor_name = os.getenv("SENSOR")
 sample_duration = 30  # seconds
 sensor = None
@@ -124,14 +125,16 @@ try:
         print(data)
 
         try:
-            res = handle(function_url, data=data, headers={"Content-type": "application/json"})
-            if res.status_code != 200:
-                print("Unexpected status code: {}".format(res.status_code))
-            else:
-                print("Sent to function..OK.")
+            res = handle(data)
+            print("reading submitted.")
+            # if res.status_code != 200:
+            #     print("Unexpected status code: {}".format(res.status_code))
+            # else:
+            #     print("Sent to function..OK.")
 
         except Exception as e:
             print(e)
+            time.sleep(sample_duration)
             continue
         time.sleep(sample_duration)
 
