@@ -1,0 +1,17 @@
+[Unit]
+Description=GrowlabSendStats
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+Restart=always
+
+StartLimitInterval=0
+
+WorkingDirectory=/home/pi/growlab/data-logger
+ExecStart=/home/pi/growlab/data-logger/sendstats.sh
+
+[Install]
+WantedBy=multi-user.target
