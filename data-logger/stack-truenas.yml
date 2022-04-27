@@ -4,7 +4,7 @@ provider:
   gateway: http://127.0.0.1:8080
 
 functions:
-  submit-sample:
+  submit-sample-to-influxdb:
     lang: python3
     handler: ./submit-sample
     image: ghcr.io/alexellis/submit-sample:0.2.1
