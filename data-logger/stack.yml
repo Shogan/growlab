@@ -9,7 +9,7 @@ functions:
     handler: ./submit-sample
     image: ghcr.io/alexellis/submit-sample:0.2.1
     environment:
-      influx_host: 192.168.2.45
+      influx_host: influxdb
       influx_port: 8086
       influx_db: readings
       write_debug: true
