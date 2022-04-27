@@ -1,0 +1,14 @@
+
+127.0.0.1	localhost
+10.62.0.1	faasd-provider
+10.62.0.20	influxdb
+
+10.62.0.21	basic-auth-plugin
+
+10.62.0.22	nats
+
+10.62.0.23	prometheus
+
+10.62.0.24	gateway
+
+10.62.0.25	queue-worker
