@@ -17,8 +17,8 @@ def handle(req):
     influx_port = os.getenv("influx_port")
     influx_db = os.getenv("influx_db")
 
-    influx_user = get_file("/var/openfaas/secrets/influx-jail-user")
-    influx_pass = get_file("/var/openfaas/secrets/influx-jail-pass")
+    influx_user = get_file("/var/lib/faasd/secrets/influx-user")
+    influx_pass = get_file("/var/lib/faasd/secrets/influx-pass")
     
     client = InfluxDBClient(influx_host, influx_port, influx_user, influx_pass, influx_db)
     try:
